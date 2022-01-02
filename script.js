@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 const author = document.getElementById('author');
 const title = document.getElementById('title');
 const numOfPages = document.getElementById('pages');
@@ -6,7 +7,7 @@ const myForm = document.querySelector('.myForm');
 const saveButton = document.querySelector('.save');
 const newBtn = document.querySelector('.newb');
 const formDisplay = document.querySelector('.form');
-
+const card = document.querySelector('.cardContainer');
 const myLibrary = [];
 
 function Book() {
@@ -29,18 +30,19 @@ Book.prototype.pages = function () {
 Book.prototype.rate = function () {
   return `Your rating ${this.rating}/10`;
 };
-
 saveButton.addEventListener('click', (e) => {
   e.preventDefault();
-  const card = document.querySelector('.cardContainer');
+  const h1 = document.createElement('h3');
+  const h2 = document.createElement('h3');
+  const h3 = document.createElement('h3');
+  const h4 = document.createElement('h3');
+  const readButton = document.createElement('button');
+  const newCard = document.createElement('card');
+  const x = document.createElement('button');
   const newBook = new Book();
   myLibrary.push(newBook);
   const index = myLibrary.indexOf(newBook);
   console.log(index);
-  const newCard = document.createElement('card');
-  const x = document.createElement('button');
-  x.textContent = 'X';
-  x.classList.add('rmv');
 
   x.addEventListener('click', () => {
     const id = parseInt(newCard.getAttribute('data-id'));
@@ -53,12 +55,8 @@ saveButton.addEventListener('click', (e) => {
       console.log(myLibrary);
     }
   });
-  // eslint-disable-next-line array-callback-return
   myLibrary.filter((book) => {
-    const h1 = document.createElement('h3');
-    const h2 = document.createElement('h3');
-    const h3 = document.createElement('h3');
-    const h4 = document.createElement('h3');
+    console.log(book);
 
     newCard.classList.add('book');
     newCard.setAttribute('data-id', index);
@@ -66,8 +64,8 @@ saveButton.addEventListener('click', (e) => {
     h2.textContent = book.heading();
     h3.textContent = book.pages();
     h4.textContent = book.rate();
-
-    const readButton = document.createElement('button');
+    x.textContent = 'X';
+    x.classList.add('rmv');
     readButton.textContent = 'Have you read it?';
     readButton.addEventListener('click', () => {
       if (!readButton.classList.contains('rd')) {
