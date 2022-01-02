@@ -1,4 +1,4 @@
-/* eslint-disable array-callback-return */
+// Global variables
 const author = document.getElementById('author');
 const title = document.getElementById('title');
 const numOfPages = document.getElementById('pages');
@@ -69,6 +69,7 @@ saveButton.addEventListener('click', (e) => {
       readButton.textContent = 'Read';
     }
   });
+  // eslint-disable-next-line array-callback-return
   myLibrary.filter((book) => {
     console.log(book);
 
