@@ -122,15 +122,19 @@ color: black;
 }
 .cardContainer{
     min-height: 50vh;
-   
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    flex-direction: row;
     gap: 18px;
 }
+.cardContainer>*{
+    flex: 0 1 15%;
+    height: 350px;
+}
 .book{
-    height: inherit;
-    width: 15%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
