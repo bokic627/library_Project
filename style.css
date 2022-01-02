@@ -13,7 +13,7 @@ body{
     background-color: lemonchiffon;
 }
 .container{
-    min-height: 50vh;
+    min-height: 40vh;
     display: flex;
     justify-content: center;
     
@@ -62,8 +62,25 @@ body{
     text-align: center;
     position: absolute;
 }
-.rd{
-    background-color: red;
+.default{
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid lightblue;
+}
+.notRead{
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 8px;
+    border: 2px solid red;
+
+
+}
+.read{
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 8px;
+    border: 2px solid green;
 }
 .heading{
     margin-bottom: 10px;
@@ -102,4 +119,43 @@ color: black;
 .save:hover{
     background-color: #fffdd0;
 
+}
+.cardContainer{
+    min-height: 50vh;
+   
+    display: flex;
+    padding: 20px;
+    flex-wrap: nowrap;
+    gap: 18px;
+}
+.book{
+    height: inherit;
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 18px;
+    border: 5px solid lightblue;
+    border-radius: 10px;
+    
+}
+.bot{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.rmvBtn{
+    width: 100%;
+    padding: 10px 0;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+}
+.rmvBtn:hover{
+    border: 2px solid red;
+}
+button{
+    background-color: lemonchiffon;
+    cursor: pointer;
 }

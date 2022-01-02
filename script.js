@@ -37,7 +37,10 @@ saveButton.addEventListener('click', (e) => {
   const h3 = document.createElement('h3');
   const h4 = document.createElement('h3');
   const readButton = document.createElement('button');
-  const newCard = document.createElement('card');
+  readButton.classList.add('default');
+  const newCard = document.createElement('div');
+  const bot = document.createElement('div');
+  bot.classList.add('bot');
   const x = document.createElement('button');
   const newBook = new Book();
   myLibrary.push(newBook);
@@ -55,6 +58,17 @@ saveButton.addEventListener('click', (e) => {
       console.log(myLibrary);
     }
   });
+  readButton.addEventListener('click', () => {
+    if (!readButton.classList.contains('notRead')) {
+      readButton.classList.add('notRead');
+      readButton.classList.remove('read');
+      readButton.textContent = 'Not Read';
+    } else {
+      readButton.classList.remove('notRead');
+      readButton.classList.add('read');
+      readButton.textContent = 'Read';
+    }
+  });
   myLibrary.filter((book) => {
     console.log(book);
 
@@ -64,22 +78,13 @@ saveButton.addEventListener('click', (e) => {
     h2.textContent = book.heading();
     h3.textContent = book.pages();
     h4.textContent = book.rate();
-    x.textContent = 'X';
-    x.classList.add('rmv');
+    x.textContent = 'Remove';
+    x.classList.add('rmvBtn');
     readButton.textContent = 'Have you read it?';
-    readButton.addEventListener('click', () => {
-      if (!readButton.classList.contains('rd')) {
-        readButton.classList.add('rd');
-        readButton.textContent = 'Not Read';
-      } else {
-        readButton.classList.remove('rd');
-        readButton.textContent = 'Read';
-      }
-    });
 
     card.appendChild(newCard);
-    newCard.append(h1, h2, h3, h4, readButton);
-    newCard.appendChild(x);
+    newCard.append(h1, h2, h3, h4, readButton, bot);
+    bot.append(x);
   });
 
   myForm.reset();
