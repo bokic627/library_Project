@@ -62,8 +62,8 @@ saveButton.addEventListener('click', (e) => {
     newCard.classList.add('book');
     newCard.setAttribute('data-id', index);
     h1.textContent = `${newBook.author}`;
-    h2.textContent = `${newBook.title}`;
-    h3.textContent = `${newBook.numOfPages} pages.`;
+    h2.textContent = `"${newBook.title}"`;
+    h3.textContent = `${newBook.numOfPages} pages`;
     h4.textContent = `Your rating ${newBook.rating}/10`;
     x.textContent = 'Remove';
     x.classList.add('rmvBtn');
