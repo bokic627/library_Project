@@ -9,19 +9,13 @@ html{
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    background-color: lemonchiffon;
-    
-    
+    background-color: lemonchiffon; 
 }
 
 .container{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    
-   
-    
-    
+    min-height: 100vh; 
 }
 
 .header{
@@ -97,7 +91,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    margin: 20px 0;
+    margin: 10px 0;
     gap: 15px;
 }
 label{
@@ -166,4 +160,17 @@ input{
 button{
     background-color: lemonchiffon;
     cursor: pointer;
+}
+.error{
+    
+    border: 2px solid red;
+}
+.errorMsg{
+    margin-bottom: 20px;
+    color: red;
+    font-size: 16px;
+    transition: 2.5s ease all;
+}
+.msg{
+    display: none;
 }

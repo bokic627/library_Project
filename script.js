@@ -1,10 +1,12 @@
 // Global variables
-
 const myForm = document.querySelector('.myForm');
 const saveButton = document.querySelector('.save');
 const newBtn = document.querySelector('.newb');
 const formDisplay = document.querySelector('.form');
 const card = document.querySelector('.cardContainer');
+const errorMsg = document.querySelector('.errorMsg');
+const msg = document.createElement('h4');
+const inputs = document.querySelectorAll('input');
 const myLibrary = [];
 
 const book = (author, title, numOfPages, rating) => ({
@@ -14,8 +16,24 @@ const book = (author, title, numOfPages, rating) => ({
   rating,
 });
 
-saveButton.addEventListener('click', (e) => {
-  e.preventDefault();
+inputs.forEach((inp) =>
+  inp.addEventListener('change', () => {
+    const rating = document.querySelector('.rate');
+    if (rating.value < 1 || rating.value > 10) {
+      errorMsg.classList.remove('msg');
+      msg.textContent = 'Choose number between 1-10!';
+      errorMsg.appendChild(msg);
+      rating.classList.add('error');
+      saveButton.disabled = true;
+    } else {
+      errorMsg.classList.add('msg');
+      rating.classList.remove('error');
+      saveButton.disabled = false;
+    }
+  })
+);
+
+saveButton.addEventListener('click', () => {
   // input variables
   const author = document.getElementById('author').value;
   const title = document.getElementById('title').value;

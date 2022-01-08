@@ -19,7 +19,7 @@
         </div>
 
         <div class="form">
-            <form action="#" class="myForm">
+            <form action="#" method='GET' class="myForm">
                 <div class="heading">
                     <h2 class='head'>What's your new book?</h2>
 
@@ -29,6 +29,7 @@
                         <div class="auth fle">
                             <label for="author">Author</label>
                             <input type="text" id="author" name="author">
+
                         </div>
                         <div class="tit fle">
                             <label for="title">Title</label>
@@ -44,11 +45,14 @@
 
                         <div class="tr fle">
                             <label for="read">Give it a rating</label>
-                            <input type="num" id="read" class='rate' min='0' max="10">
+                            <input type="num" id="read" class='rate'>
                         </div>
                     </div>
                 </div>
 
+                <div class="errorMsg">
+
+                </div>
 
                 <div class="btn fle">
                     <button type="submit" class="save ">Save</button>
