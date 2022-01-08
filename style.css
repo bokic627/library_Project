@@ -108,9 +108,8 @@ input{
     padding: 5px;
     border-radius: 8px;
     background-color:
-#fffdd0;
-color: black;
-    text-align: center;
+    #fffdd0;
+    color: black;
     border: none;
     font-size: 16px;
 }
@@ -147,6 +146,8 @@ color: black;
     gap: 18px;
     border: 5px solid lightblue;
     border-radius: 10px;
+    text-align: center;
+    height: 400px;
 }
 .bot{
     display: flex;

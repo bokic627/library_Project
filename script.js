@@ -16,28 +16,31 @@ const book = (author, title, numOfPages, rating) => ({
 
 saveButton.addEventListener('click', (e) => {
   e.preventDefault();
+  // input variables
   const author = document.getElementById('author').value;
   const title = document.getElementById('title').value;
   const numOfPages = document.getElementById('pages').value;
   const rating = document.querySelector('.rate').value;
+  // new elements
   const h1 = document.createElement('h3');
   const h2 = document.createElement('h3');
   const h3 = document.createElement('h3');
   const h4 = document.createElement('h3');
   const readButton = document.createElement('button');
-  readButton.classList.add('default');
   const newCard = document.createElement('div');
   const bot = document.createElement('div');
-  bot.classList.add('bot');
   const x = document.createElement('button');
+  // new classes
+  readButton.classList.add('default');
+  bot.classList.add('bot');
+
+  // book object
   const newBook = book(author, title, numOfPages, rating);
   myLibrary.push(newBook);
   const index = myLibrary.indexOf(newBook);
-  console.log(index);
 
   x.addEventListener('click', () => {
     const id = parseInt(newCard.getAttribute('data-id'));
-
     if (id === index) {
       const removeElement = card.querySelector(`[data-id = "${index}"]`);
       console.log(removeElement);
